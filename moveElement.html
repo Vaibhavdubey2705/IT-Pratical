@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Move Image</title>
+    <style>
+        img{
+            width: 350px;
+            height: 300px;
+        }
+        button{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="i">My Name is Vaibhav</p>
+    <br>
+    <button onclick="move()">Move</button>
+    <button onclick="stopp()">Stop</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        var t;
+        function set(){
+            t=setInterval(moveEle,11);
+        }
+        var image = document.getElementById('i');
+        image.style.position= 'relative';
+        image.style.left = '0px'
+        var st=0;
+        var back=0;
+        function moveEle(){
+            if(st==0 || st==2){
+                st=1;
+                set();
+            }
+            if(parseInt(image.style.left)<(parseInt(window.screen.availWidth)-365) && back==0){
+                image.style.left=parseInt(image.style.left)+8+"px";
+            }
+            if(parseInt(image.style.left)>(parseInt(window.screen.availWidth)-365) && back==0){
+                back=1;
+            }
+            if(parseInt(image.style.left)>0 && back==1){
+                image.style.left=parseInt(image.style.left)-8+"px";
+            }
+            if(parseInt(image.style.left)==0 && back==1) back=0;
+        }
+        function stopp(){
+            st=2;
+            clearInterval(t);
+        }
+        function reset(){
+            stopp();
+            image.style.left ="0px";
+        }
+    </script>    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var count=0,count1=0;
+        function abc(){
+            var s = document.getElementById("t").value;
+            s=""+s;
+            var len = s.length;
+            count1++;
+            count=s.length;
+            if(count>count1){
+                document.getElementById("t").value = s.substring(0,len-(count-count1));
+                count=count1;
+                count1=count;
+            }
+            if(count1>count) count1=count;
+            var l = document.getElementById("t").value.length;
+            if(document.getElementById("t").value.charCodeAt(l-1)<48 || document.getElementById("t").value.charCodeAt(l-1)>57 ){
+                var r = document.getElementById("t").value;
+                var deleted = r[length-1];
+                document.getElementById("t").value =r.substring(0,r.length-1);
+                alert("You've Entered -> "+deleted+"\n\t\t\tEnter Digit Only !!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="txt">Enter Mobile No : </label><input type="text" id="t" onkeyup="abc()">
+</body>
+</html>

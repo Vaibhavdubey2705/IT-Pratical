@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var time = 0; 
+        var m = 40;
+        function moveImage(){
+            document.getElementById("img").style.marginLeft=m+"px";
+            m+=100;
+            if(m=="1000px"){
+                document.getElementById("img").style.marginLeft="0px";
+            }
+        }
+        function stopImage(){
+            clearInterval(time);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="C:\Users\Manvendra Singh\Downloads\9jfzAJA-avengers-wallpaper-hd.jpg" 
+    alt="img" height="300px">
+    <div>
+        <input style="margin-top: 30px;" type="button" id="1" value="Move" onClick="time=setInterval(moveImage,1000)">
+        <input style="margin-top: 30px;" type="button" id="2" value="Stop" onClick=stopImage()>
+    </div>
+</body>
+</html>
+
+<!-- Code contributed by sahil sharma  -->

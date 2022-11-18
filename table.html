@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Table</title>
+    <style>
+        table,
+        td,
+        tr {
+            font-family:'Courier New', Courier, monospace;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+            text-align: center;
+            font-weight: 540;
+        }
+
+        @media only screen and (max-width: 1084px) {
+
+            table,
+            td,
+            tr {
+                font-size: 15px;
+                padding: 8px;
+            }
+        }
+
+        h1 {
+            font-family: sans-serif;
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body onload="table()">
+    <script>
+        var num = 2;
+        var size=14;
+        document.body.insertAdjacentHTML("afterbegin", "<h1>Tables</h1>")
+        var tab = document.createElement("table");
+        const timeout = setInterval(table, 1000);
+        function table() {
+            size=14;
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            var tr = document.createElement("tr");
+            tr.setAttribute("style","color:#"+randomColor+";")
+            for (let i = 1; i < 11; i++) {
+                var td = document.createElement("td");
+                td.setAttribute("style","font-size : "+size+"px")
+                var col = num + "×" + i + "=" + (num * i);
+                var c = document.createTextNode(col);
+                td.appendChild(c);
+                tr.appendChild(td);
+                size=size+1;
+            }
+            tab.appendChild(tr);
+            num++;
+            if (num > 10) clearInterval(timeout);
+        }
+        document.body.appendChild(tab);
+    </script>
+</body>
+
+</html>

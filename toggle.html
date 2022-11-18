@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.1.js"></script>
+    <title>Document</title>
+    <script>
+        // $(document).ready(function(){
+        //     // $('#1').css({'background-color':'green'});
+        //     console.log($('div').children());
+        // })
+
+        // $(document).ready(function(){
+        //     //console.log($('div').parents());
+        //     console.log($('div').eq(3).filter('.def'))
+        // })
+
+        $(document).ready(function(){
+            $('#2').click(function(){
+                $('#1').show();
+            })
+            $('#3').click(function(){
+                $('#1').hide();
+            })
+            $('#4').click(function(){
+                $('#1').toggle();
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <!-- <div id="1" class="def">div1
+        <div id="2" >Div2</div>
+        <div id="3" class="abc">Div3</div>
+        <div id="4" class="abc">Div4
+            <div id="5" class="xyz">Div5</div>
+        </div>
+
+    </div> -->
+
+    <div id="1">Hi How are you</div>
+    <button id="2">Show</button>
+    <button id="3">Hide</button>
+    <button id="4">Toggle</button>
+</body>
+</html>

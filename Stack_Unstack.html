@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var arr = [];
+        function pus(){
+            var a=document.getElementById("txt").value;
+            if(a!==""){
+                arr.push(a+"\n");
+                document.getElementById("txtar").value=arr;
+                document.getElementById("txt").value="";
+            }
+            else{
+                alert("String is empty");
+            }
+            
+        }
+
+        function po(){
+            if(arr!=""){
+                arr.pop();
+                document.getElementById("txtar").value=arr;
+            }
+            else{
+                alert("String is empty");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+
+        <input id="txt" type="text"><br><br>
+        <input type="button" value="Push" onclick="pus()">
+        <input type="button" value="Pop" onclick="po()"><br><br>
+        <textarea id="txtar"></textarea>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i;
+        var j=2;
+        var s=1;
+        var c=["red","blue","black","yellow","pink"];
+        function table(){
+            var f="";
+            for(i=1;i<=10;i++){
+                f=f+(j+"*"+i+"="+j*i+"<br>");
+            }
+            document.write("<br><br>");
+            j++;
+            s++;
+            document.write(f.fontsize(s).fontcolor(c[Math.floor(Math.random()*3)]));
+            if(j==11){
+                clearInterval(time);
+            }
+            //f=" ";
+        }
+        if(j<=10){
+            time=setInterval(table,2000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function color(c){
+            document.getElementById('para').style.color=c;
+        }
+        function size(s){
+            document.getElementById('para').style.fontSize=s;
+        }
+        function font(f){
+            document.getElementById('para').style.fontFamily=f;
+        }
+    </script>
+</head>
+<body>
+    <p id="para">RRR is a 2022 Indian Telugu-language epic action drama film directed by S. S. Rajamouli, 
+        who wrote the film with V. Vijayendra Prasad. 
+        It is produced by D. V. V. Danayya of DVV Entertainment. 
+        The film stars N. T. Rama Rao Jr., Ram Charan, Ajay Devgn, Alia Bhatt, Shriya Saran, Samuthirakani, Ray Stevenson, Alison Doody, and Olivia Morris. 
+        It is a fictional story about two real-life Indian revolutionaries, Alluri Sitarama Raju (Charan) and Komaram Bheem (Rama Rao), and their fight against the British Raj. Set in 1920, the plot explores the undocumented period in their lives when both the revolutionaries chose to go into obscurity before they began the fight for their country.
+    </p>
+    <div>
+        <button id='red' onClick='color(this.id)'>Red</button>
+        <button id='blue' onClick='color(this.id)'>Blue</button>
+        <button id='green' onClick='color(this.id)'>Green</button>
+    </div>
+    <div>
+        <button id = '10px' onClick='size(this.id)'>10</button>
+        <button id = '20px' onClick='size(this.id)'>20</button>
+        <button id = '30px' onClick='size(this.id)'>30</button>
+    </div>
+    <div>
+        <button id='arial' onClick='font(this.id)'>Arial</button>
+        <button id='Calibri' onClick='font(this.id)'>Calibri</button>
+        <button id='times new roman' onClick='font(this.id)'>Times New Roman</button>
+    </div>
+</body>
+</html>

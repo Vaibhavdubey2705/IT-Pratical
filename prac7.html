@@ -1,0 +1,40 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<h1> PET INFORMATION </h1>
+	<div id="output"> </div>
+	<button type="button">Submit </button>
+
+	<script>
+		var out = document.getElementById("output");
+		var flag = 1;
+		$('button').click(function () {
+			if (flag == 1) {
+				$.ajax({
+					url: 'data.json', dataType: 'json', type: 'Get', aync: false,
+					success: function (data) {
+						console.log("hi");
+						var e = document.createElement('div');
+						$.each(data, function (key, value) {
+							e.innerHTML = '<h3> ' + key + ' : </h4> ';
+							var p = document.createElement('p')
+							for (var key in value) {
+								p.innerHTML += key + " is " + value[key]+"<br>";
+							}
+							e.appendChild(p);
+							out.appendChild(e);
+						});
+					}
+				})
+				flag = 0;
+				$('button').hide();
+			}
+		});
+	</script>
+
+</body>
+
+</html>

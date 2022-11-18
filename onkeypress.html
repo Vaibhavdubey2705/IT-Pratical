@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        //document.getElementById("txt").addEventListener("keypress",()=>{
+        function k(event){
+            const isL = /^[a-z]$/i.test(event.key);
+            const isN = /^[a0-9]$/i.test(event.key);
+
+            if(isL)
+            alert("It is Alphabet");
+            else
+            alert("It is Numeric");
+        }
+        //});
+        
+    </script>
+</head>
+<body>
+    <input type="text" id="txt" onkeypress="k(event)"></input>
+</body>
+</html>
